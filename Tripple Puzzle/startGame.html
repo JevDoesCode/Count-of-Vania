@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Count of Vania</title>
+  <link rel="stylesheet" href="websiteStyle/startGame.css">
+</head>
+<body>
+  <!-- Audio -->
+    <audio id="music">
+      <source src="soundtrack/Start Menu.mp3" type="audio/mp3">
+    </audio>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="navigation">
+      <div class="logo-container">
+        <img src="websiteStyle/images/Logo.png" alt="company logo">
+        <h4>Count of Vania</h4>
+      </div>
+      
+      <div class="nav-options">
+        <h4 class="option" onclick="displayLogin()">Login</h4>
+        <h4 class="option">Register</h4>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content Body -->
+  <div class="center-game">
+    <img src="icons/muteButton.png" alt="music button" id="musicButton" onclick="play()">
+    <h1 class="title">Count of Vania</h1>
+
+    <div class="start-container">
+      <h1 class="start"><a href="intro.html">Start Game?</a></h1> 
+    </div>
+  </div>
+
+  <!-- Login -->
+  <form action="" method="" id="center-form">
+    <div class="form-container">
+      <h1>Login</h1>
+      <input type="text" name="" placeholder="Username"> <br>
+      <input type="text" name="" placeholder="Password"> <br>
+
+      <button class="Register">Register?</button>
+      <button class="login">Login</button>
+    </div>
+  </form>
+
+  <!-- Register -->
+  <!-- <form action="" method="" id="center-form">
+    <div class="form-container">
+      <h1>Register</h1>
+      <input type="text" name="" placeholder="Username"> <br>
+      <input type="text" name="" placeholder="Password"> <br>
+
+      <button class="Register">Register?</button>
+      <button class="login">Login</button>
+    </div>
+  </form> -->
+
+  <!-- js file -->
+  <script src="mechanic.js"></script>
+</body>
+</html>
