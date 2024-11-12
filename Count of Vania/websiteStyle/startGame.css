@@ -4,7 +4,7 @@
 }
 
 body {
-    background: -webkit-linear-gradient(right, #0d0729, #111111);   
+    background: linear-gradient(to right, #000000, #3533cd);  
     padding: 0;
     margin: 0;
     font-family: pixelFont, Courier, monospace;
@@ -13,6 +13,7 @@ body {
 
 /* navigation bar w/ logo & title */
 nav {
+    background: linear-gradient(to right, #000000, #2a55cc);
     display: flex;
     justify-content: space-around;
     align-items: center;
