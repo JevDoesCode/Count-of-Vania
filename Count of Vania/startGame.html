@@ -8,7 +8,7 @@
 </head>
 <body>
   <!-- Audio -->
-    <audio id="music">
+    <audio loop id="music">
       <source src="soundtrack/Start Menu.mp3" type="audio/mp3">
     </audio>
 
@@ -29,11 +29,11 @@
 
   <!-- Main Content Body -->
   <div class="center-game">
-    <img src="icons/muteButton.png" alt="music button" id="musicButton" onclick="play()">
+    <img src="icons/muteButton.png" alt="music button" id="musicButton" onclick="toggleAudio()">
     <h1 class="title">Count of Vania</h1>
 
     <div class="start-container">
-      <h1 class="start"><a href="intro.html">Start Game</a></h1> 
+      <h1 class="start"><a href="main.html">Start Game</a></h1> 
     </div>
   </div>
 
@@ -45,7 +45,7 @@
       <input type="text" name="" placeholder="Username"> <br>
       <input type="text" name="" placeholder="Password"> <br>
 
-      <button>Login</button>
+      <div id="loginbtn_registerbtn">Login</div>
     </div>
   </form>
 
@@ -59,11 +59,11 @@
       <input type="text" name="" placeholder="Password"> <br>
       <input type="text" name="" placeholder="Confirm Password"> <br>
 
-      <button>Register</button>
+      <div id="loginbtn_registerbtn">Register</div>
     </div>
   </form>
 
   <!-- js file -->
-  <script src="mechanic.js"></script>
+  <script src="overallGameMechanism.js"></script>
 </body>
 </html>

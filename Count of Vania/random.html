@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="random.css">
+</head>
+<body>
+    <!-- THE BOSS FIGHT -->
+    <div class="boss-container">        
+        <h1 class="hpOfBoss">100❦</h1>
+        <img src="sprites/Boss fighting pose.png" alt="boss fighting pose" id="boss">
+        <!-- <img src="sprites/rage boss.png" alt="boss fighting pose" class="rageBoss"> -->
+        <h1 class="hpOfMC">100❦</h1>
+
+        <!-- skills gif -->
+         <img src="effx/slashing_effect.gif" alt="slashing effect" class="mcSkill">
+         <img src="effx/Water_effect.gif" alt="boss skill effect" class="bossSkill">
+
+        <!-- CONTAINER TO HOLD BOTH OF THE TEXT-BOXES AND MC PROFILE -->
+
+        <!-- Swordman Avatar -->
+        <div id="swordman" class="sprite-container">
+            <img src="sprites/mcSwordBossFight.png" alt="Swordsmen" class="spriteCharacter">
+        </div>
+    
+        <!-- Boss text-box -->
+        <div id="bossTextContainer" class="text-box">
+            <img src="sprites/pixel boss.png" alt="boss pixelated character">
+
+            <p class="boss-textBox">
+                So you finally showed up? I expected you to run away like the other fools!
+                <button class="nextBtn" onclick="initialization()">></button>
+            </p>
+
+            <p class="boss-textBox">
+                I LIKE PEOPLE WHO EAT COOKIES AND SHIT AND SHIT AND SHIT AND SHIT AND SHIT AND SHIT AND SHIT AND SHIT <br>
+                <span onclick="correctChoice()">A. dasd</span> 
+                <span onclick="wrongChoice()">B. Soldier</span>
+                <span onclick="wrongChoice()">C. dsadasdsada</span>
+            </p>
+            <p class="boss-textBox">
+                What is the sword technique used by Samurais that encapsulate the basis of the Earth? <br>
+                <span onclick="correctChoice()">A. Samurai</span> 
+                <span onclick="wrongChoice()">B. Foot Soldier</span>
+                <span onclick="wrongChoice()">C. Army</span>
+            </p>
+            <p class="boss-textBox">
+                AUDBUIASBDUIASIUODASUIOADSNIOANSI <br>
+                <span onclick="correctChoice()">A. Samurai</span> 
+                <span onclick="wrongChoice()">B. Foot Soldier</span>
+                <span onclick="wrongChoice()">C. Army</span>
+            </p>
+        </div>
+    </div>
+    
+    <script src="bossMechanism.js"></script>
+</body>
+</html>

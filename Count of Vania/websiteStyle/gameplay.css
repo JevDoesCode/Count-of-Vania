@@ -1,0 +1,337 @@
+@font-face {
+    font-family: pixelFont;
+    src: url(ttf/yoster.ttf);
+}
+
+* {
+    font-family: pixelFont, Courier, monospace;
+}
+
+
+/* OPENING OF THE GAME */
+body {
+    background: -webkit-linear-gradient(right, #0d0729, #111111);   
+    padding: 0;
+    margin: 0;
+}
+
+
+/* navigation bar w/ logo & title */
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container h4 {
+    color: white;
+}
+
+
+/* nav options */
+.nav-options {
+    display: flex;
+}
+
+.nav-options  h4 {
+    cursor: pointer;
+    color: white;
+    margin: 0 1rem;
+}
+
+
+/* container of the Game */
+.center-game {
+    border: 5px solid rgb(0, 0, 0);
+    position: relative;
+    color: white;
+    width: 60rem;
+    height: 25rem;
+    margin: 3em auto;
+    background-color: black;
+}
+
+
+/* music icon */
+#musicButton {
+    position: absolute;
+    inset: 10px 5px;
+}
+
+/* VIDEO INTRODUCTION OF THE DEVS */
+#introVideo {
+    width: 100%;
+    height: 100%;
+}
+
+/* trigger event as feature sprite */
+.featureSprite {
+    position: absolute;
+    cursor: pointer;
+    bottom: 0;
+    width: 10%;
+}
+
+/* storyline dialogue */
+.dialogue-container {
+    display: none;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.choices {
+    cursor: pointer;
+}
+
+#text-container2 {
+    display: none;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+/* Dungeon Prison cell  of the game */
+.dungeonCutscene {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* BOSS SECTION */
+.boss-container {
+    display: none;
+    position: relative;
+    padding: 1em, 1em, 0, 1em;
+    border: 5px solid rgb(0, 0, 0);
+    width: 60rem;
+    height: 25rem;
+    margin: 3em auto;
+    color: white;
+    background-image: url("images/boss\ fight.png");
+    background-size: 100%;
+
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+/* SKILL EFFX BY MC */
+.mcSkill {
+    display: none;
+    position: absolute;
+    width: 25%;
+    left: 20rem;
+    bottom: 5rem;
+}
+
+/* SKILL EFFX BY BOSS */
+.bossSkill {
+    display: none;
+    position: absolute;
+    width: 25%;
+    bottom: 5rem;
+}
+
+/* HP OF THE BOSS */
+.hpOfBoss {
+    color: red;
+    position: absolute;
+    right: 5em;
+    top: 3em;
+}
+
+/* the img of the boss */
+#boss {
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    width: 70%;
+}
+
+
+/* container for text box and mc */
+.containerOfBoth {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* MC CONTAINER */
+.sprite-container {
+    width: 20%;
+    border: 1px solid white;
+    background: black;
+    border-radius: 10px;
+}
+
+/* MC IMG */
+.spriteCharacter {
+    width: 100%;
+    height: 100%;
+}
+
+/* HP OF THE MC */
+.hpOfMC {
+    position: absolute;
+    left: 3.5em;
+    bottom: 4em;
+}
+
+/* boss and mc text box */
+.text-box {
+    position: relative;
+    display: flex;  
+    background-color: rgb(73, 47, 99);
+    border: 1px solid white;
+    width: 50%;
+    border-radius: 10px;
+}
+
+/* Boss text box */
+.boss-textBox {
+    display: none;
+    padding: 0 1rem 1rem 1rem;
+}
+
+/* Boss text box choices*/
+.boss-textBox span {
+    cursor: pointer;
+}
+
+/* Boss display text boss */
+.displayBlock {
+    display: block;
+}
+
+.text-box img {
+    width: 50%;
+    background-color: black;
+}
+
+
+/* the option to make text have a fade in effx */
+#animatedText {
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+/* FADE-IN ANIMATION */
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* NEXT DIALOGUE BTN */
+.nextBtn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: none;
+    color: white;
+}
+
+@media (max-width: 930px) {
+    .center-game, .boss-container {
+        width: 50rem;
+        height: 25rem;
+    }
+
+    #musicButton {
+        width: 35px;
+        inset: 15px 5px;
+    }
+    
+    .hpOfMC {
+        left: 3em;
+    }
+}
+
+@media (max-width: 800px) {
+    .center-game, .boss-container {
+        width: 35rem;
+        height: 30rem;
+        margin: 5em auto;
+        background-size: cover;
+    }
+
+    #musicButton {
+        width: 30px;
+    }
+
+    .hpOfBoss {
+        color: red;
+        left: 7em; 
+        top: 0;
+    }
+    
+    #boss {
+        left: -5em;
+        width: 120%;
+    }
+
+    .hpOfMC {
+        bottom: 7em;
+        left: 3.5em;
+        font-size: 20px;
+    }
+
+    .skill {
+        left: 10rem;
+        bottom: 10rem;
+    }
+}
+
+@media (max-width: 570px) {
+    .center-game, .boss-container {
+        width: 25rem;
+        height: 35rem;
+    }
+
+    #musicButton {
+        width: 25px;
+        inset: 5px 3px;
+    }
+
+    .hpOfBoss {
+        top: 5em;
+        left: 8em;
+    }
+
+    .hpOfMC {
+        bottom: 11em;
+        left: 3em;
+        font-size: 16px;
+    }
+    
+    #boss {
+        left: -15rem;
+        width: 50rem;
+    }
+
+    .text-box img {
+        width: 100%;
+    }
+
+    .skill {
+        width: 40%;
+        left: 5rem;
+        bottom: 15rem;
+    }
+}
