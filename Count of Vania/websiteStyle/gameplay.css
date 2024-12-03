@@ -345,6 +345,7 @@ nav {
     }
 }
 
+/* POP-GAME ANIMATION */
 @keyframes fadeGameLikeAnimation {
     0% {
         transform: translateY(25%);
@@ -356,6 +357,8 @@ nav {
     }
 }
 
+
+/* RESPONSIVENESS */
 @media (max-width: 930px) {
     .center-game, .boss-container, .displayOfYouLost, .youLoseContainer, .endingContainer {
         width: 50rem;
