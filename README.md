@@ -1,2 +1,2 @@
 RIGHT NOW WE 3JS COOKING THE WEBDEV PROJECT
-- We cooked to fuck we prob gonna get a congratulation.
+- We cook to the point Gordon Ramsay's idiot sandwich was our breakfast. (im high rn)
