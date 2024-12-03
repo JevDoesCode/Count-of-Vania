@@ -118,13 +118,6 @@ nav {
 }
 
 
-/* music icon */
-#musicButton {
-    position: absolute;
-    inset: 10px 5px;
-}
-
-
 /* text of the the game */
 .title {
     margin-top: 0;

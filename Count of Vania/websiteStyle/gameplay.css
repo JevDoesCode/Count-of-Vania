@@ -15,6 +15,13 @@ body {
     margin: 0;
 }
 
+/* THE BUTTON TO SKIP SCENE AND STORYLINE */
+#skip {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+}
+
 
 /* navigation bar w/ logo & title */
 nav {
@@ -88,7 +95,7 @@ nav {
     animation-fill-mode: forwards;
 }
 
-.choices {
+.options {
     cursor: pointer;
 }
 
@@ -106,10 +113,26 @@ nav {
     height: 100%;
 }
 
+/* ENDING SCENE */
+.endingContainer {
+    display: none;
+    
+    background-color: rgb(0, 0, 0);
+    border: 5px solid rgb(0, 0, 0);
+    width: 60rem;
+    height: 25rem;
+    margin: 3em auto;
+}
+
+#ending {
+    width:  100%;
+    height: 100%;
+}
 
 /* BOSS SECTION */
 .boss-container {
     display: none;
+
     position: relative;
     padding: 1em, 1em, 0, 1em;
     border: 5px solid rgb(0, 0, 0);
@@ -119,18 +142,179 @@ nav {
     color: white;
     background-image: url("images/boss\ fight.png");
     background-size: 100%;
+    animation: fadeInAnimation ease 6s;
+}
 
-    animation: fadeInAnimation ease 3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+/* the img of the boss */
+#boss {
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 55%;
+}
+
+.bossFightForm {
+    display: none;
+}
+
+/* TEXT BOX FOR MC AND BOSS */
+.text-box {
+    display: none;
+}
+
+/* MC CONTAINER */
+.sprite-container {
+    margin: 1em 1em 1em 4em;
+    width: 20%;
+    height: 20%;
+    border-radius: 15px;
+    box-shadow: 0px 3px 8px rgb(0, 0, 0.25);
+}
+
+/* MC IMG */
+.spriteCharacter {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+/* YOU LOST CONTAINER */
+.displayOfYouLost {
+    display: none;
+
+    color: rgb(255, 0, 0);
+    background-color: rgb(0, 0, 0);
+    border: 5px solid rgb(0, 0, 0);
+    width: 60rem;
+    height: 25rem;
+    margin: 3em auto;
+}
+
+.youLoseContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60rem;
+    height: 25rem;
+
+    animation: fadeInAnimation ease-in-out 3s;
+}
+
+.youLoseHolder {
+    font-size: 2em;
+    text-align: center;
+}
+
+.again {
+    cursor: pointer;
+}
+
+
+/* boss text box container */
+.bossTextContainer {
+    display: flex;  
+    position: absolute;
+    top: 0;
+    left: 35%;
+    margin: 15px;
+    background-color: rgb(73, 47, 99);
+    width: 20rem;
+    border-radius: 10px;
+    box-shadow: 0px 3px 8px rgb(0, 0, 0.25);
+    animation: fadeGameLikeAnimation ease 1s;
+}
+
+.bossTextContainer img {
+    width: 5rem;
+    background-color: black;
+}
+
+/* Not display Boss text box */
+.bossTextContainer p{
+    padding: 0 1rem 1rem 1rem;
+}
+
+/* Choices for the questionnaires */
+.choices {
+    display: none;
+}
+
+.choicesContainer {
+    overflow: hidden;
+    text-align: center;
+    width: 25rem;
+    display: flex;
+    position: absolute;
+    bottom: 2em;
+    left: 35%;
+    animation: fadeGameLikeAnimation ease 1s;
+}
+
+.choicesContainer .choice {
+    cursor: pointer;
+    background-color: rgb(73, 47, 99);
+    color: white;
+    margin: 0 2em;
+    padding: 0.5rem;
+    box-shadow: 0px 3px 8px rgb(0, 0, 0.25);
+    font-size: 15px;
+}
+
+/* HOVER ANIMATION EFFX */
+.choice:hover {
+    transform: translateY(-15%);
+    transition: transform 0.5s;
+}
+
+/* display text box */
+.displayBlock {
+    display: block;
+}
+
+/* HP OF THE BOSS */
+.hpOfBoss {
+    text-align: center;
+    padding: 5px;
+    background-color: black;
+    border-radius: 10px;
+    color: rgba(230, 13, 13, 0.945);
+    position: absolute;
+    right: 13em;
+    top: 5em;
+    box-shadow: 0px 3px 8px rgb(0, 0, 0.25);
+}
+
+/* HP OF THE MC */
+.hpOfMC {
+    position: absolute;
+    left: 7.5em;
+}
+
+/* NEXT DIALOGUE BTN */
+.nextBtn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: none;
+    color: white;
+    font-size: 10px;;
+}
+
+/* SKILL EFFX THAT HEALS */
+.healSkill {
+    display: none;
+    position: absolute;
+    left: 7em;
+    top: 1em;
+    width: 10%;
 }
 
 /* SKILL EFFX BY MC */
 .mcSkill {
     display: none;
     position: absolute;
-    width: 25%;
-    left: 20rem;
+    width: 15%;
+    left: 25rem;
     bottom: 5rem;
 }
 
@@ -138,87 +322,10 @@ nav {
 .bossSkill {
     display: none;
     position: absolute;
-    width: 25%;
-    bottom: 5rem;
-}
-
-/* HP OF THE BOSS */
-.hpOfBoss {
-    color: red;
-    position: absolute;
-    right: 5em;
-    top: 3em;
-}
-
-/* the img of the boss */
-#boss {
-    position: absolute;
-    bottom: 0;
-    left: 15%;
-    width: 70%;
-}
-
-
-/* container for text box and mc */
-.containerOfBoth {
-    position: absolute;
-    bottom: 20px;
-    display: flex;
-    justify-content: space-around;
-}
-
-/* MC CONTAINER */
-.sprite-container {
-    width: 20%;
-    border: 1px solid white;
-    background: black;
-    border-radius: 10px;
-}
-
-/* MC IMG */
-.spriteCharacter {
-    width: 100%;
-    height: 100%;
-}
-
-/* HP OF THE MC */
-.hpOfMC {
-    position: absolute;
-    left: 3.5em;
-    bottom: 4em;
-}
-
-/* boss and mc text box */
-.text-box {
-    position: relative;
-    display: flex;  
-    background-color: rgb(73, 47, 99);
-    border: 1px solid white;
+    left: 15em;
+    bottom: -2em;
     width: 50%;
-    border-radius: 10px;
 }
-
-/* Boss text box */
-.boss-textBox {
-    display: none;
-    padding: 0 1rem 1rem 1rem;
-}
-
-/* Boss text box choices*/
-.boss-textBox span {
-    cursor: pointer;
-}
-
-/* Boss display text boss */
-.displayBlock {
-    display: block;
-}
-
-.text-box img {
-    width: 50%;
-    background-color: black;
-}
-
 
 /* the option to make text have a fade in effx */
 #animatedText {
@@ -238,100 +345,176 @@ nav {
     }
 }
 
-/* NEXT DIALOGUE BTN */
-.nextBtn {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background: none;
-    color: white;
+@keyframes fadeGameLikeAnimation {
+    0% {
+        transform: translateY(25%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 @media (max-width: 930px) {
-    .center-game, .boss-container {
+    .center-game, .boss-container, .displayOfYouLost, .youLoseContainer, .endingContainer {
         width: 50rem;
         height: 25rem;
     }
 
     #musicButton {
-        width: 35px;
+        width: 50px;
         inset: 15px 5px;
+    }
+
+    #boss {
+        width: 60%;
+        left: 10em;
+    }
+
+    .hpOfBoss {
+        font-size: 18px;
+        top: 10em;
+        right: 15em;
     }
     
     .hpOfMC {
-        left: 3em;
+        left: 6.5em;
+    }
+
+    .mcSkill {
+        left: 20rem;
+    }
+
+    .bossSkill {
+        bottom: -1em;
+        left: 11.5em;
+    }
+
+    .choicesContainer {
+        left: 30%;
     }
 }
 
 @media (max-width: 800px) {
-    .center-game, .boss-container {
+    .center-game, .boss-container, .displayOfYouLost, .youLoseContainer, .endingContainer {
         width: 35rem;
         height: 30rem;
         margin: 5em auto;
         background-size: cover;
     }
 
-    #musicButton {
-        width: 30px;
+    #boss {
+        left: 0rem;
+        width: 35rem;
     }
 
-    .hpOfBoss {
-        color: red;
-        left: 7em; 
-        top: 0;
+    .sprite-container {
+        width: 15%;
+        height: 15%;
+    }
+
+    .bossTextContainer {
+        width: 50%;
+        font-size: 12px;
+    }
+
+    .choicesContainer {
+        left: 15%;
+    }
+
+    .choices {
+        font-size: 16px;
     }
     
-    #boss {
-        left: -5em;
-        width: 120%;
+
+    .hpOfBoss {
+        top: 7em;
+        left: 17em;
+        width: 10%;
+        font-size: 15px;
     }
 
     .hpOfMC {
-        bottom: 7em;
-        left: 3.5em;
-        font-size: 20px;
+        left: 5.5em;
+        top: 0;
+        font-size: 16px;
     }
 
-    .skill {
-        left: 10rem;
+    .healSkill {
+        left: 4em;
+        width: 15%;
+    }
+
+    .mcSkill {
+        width: 20%;
+        left: 15rem;
         bottom: 10rem;
+    }
+
+    .bossSkill {
+        width: 70%;
+        bottom: 0;
+        left: 4em;
     }
 }
 
 @media (max-width: 570px) {
-    .center-game, .boss-container {
+    .center-game, .boss-container, .displayOfYouLost, .youLoseContainer, .endingContainer {
         width: 25rem;
         height: 35rem;
     }
 
-    #musicButton {
-        width: 25px;
-        inset: 5px 3px;
+    #boss {
+        left: -8rem;
+        width: 40rem;
     }
 
+    .sprite-container {
+        width: 15%;
+        height: 15%;
+    }
+
+    .bossTextContainer {
+        width: 50%;
+        font-size: 12px;
+    }
+
+    .choicesContainer {
+        left: 3%;
+    }
+
+    .choices {
+        font-size: 13px;
+        width: 100%;
+    }
+    
+
     .hpOfBoss {
-        top: 5em;
-        left: 8em;
+        top: 8em;
+        left: 11em;
+        font-size: 16px;
     }
 
     .hpOfMC {
-        bottom: 11em;
-        left: 3em;
+        left: 4.5em;
+        top: 0;
         font-size: 16px;
     }
-    
-    #boss {
-        left: -15rem;
-        width: 50rem;
+
+    .healSkill {
+        top: 2em;
+        width: 15%;
     }
 
-    .text-box img {
-        width: 100%;
+    .mcSkill {
+        width: 30%;
+        left: 8rem;
+        bottom: 10rem;
     }
 
-    .skill {
-        width: 40%;
-        left: 5rem;
-        bottom: 15rem;
+    .bossSkill {
+        bottom: 2.5em;
+        left: 1.5em;
     }
 }
