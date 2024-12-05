@@ -357,7 +357,7 @@ nav {
     }
 }
 
-/* PLAYER DMG ANIMATION */
+/* DMG ANIMATION */
 @keyframes dmgAnimation {
     0% { bottom: 0; left: 25%; }
     25% { bottom: 1.5%; left: 25%; }
