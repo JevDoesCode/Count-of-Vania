@@ -148,8 +148,8 @@ nav {
 /* the img of the boss */
 #boss {
     position: absolute;
-    bottom: 0;
     left: 25%;
+    bottom: 0%;
     width: 55%;
 }
 
@@ -345,7 +345,7 @@ nav {
     }
 }
 
-/* POP-GAME ANIMATION */
+/* POP GAME-LIKE ANIMATION */
 @keyframes fadeGameLikeAnimation {
     0% {
         transform: translateY(25%);
@@ -357,8 +357,15 @@ nav {
     }
 }
 
+/* PLAYER DMG ANIMATION */
+@keyframes dmgAnimation {
+    0% { bottom: 0; left: 25%; }
+    25% { bottom: 1.5%; left: 25%; }
+    50% { bottom: 1.5%; left: 24%; }
+    75% { bottom: 1.5%; left: 26%; }
+    100% { bottom: 0; left: 25%; }
+}
 
-/* RESPONSIVENESS */
 @media (max-width: 930px) {
     .center-game, .boss-container, .displayOfYouLost, .youLoseContainer, .endingContainer {
         width: 50rem;
@@ -371,7 +378,7 @@ nav {
     }
 
     #boss {
-        width: 60%;
+        width: 30em;
         left: 10em;
     }
 
@@ -397,6 +404,14 @@ nav {
     .choicesContainer {
         left: 30%;
     }
+
+    @keyframes dmgAnimation {
+        0% { bottom: 0em; left: 10em; }
+        25% { bottom: 1em; left: 10em; }
+        50% { bottom: 1em; left: 11em; }
+        75% { bottom: 1em; left: 9rem; }
+        100% { bottom: 0em; left: 10em; }
+    }
 }
 
 @media (max-width: 800px) {
@@ -408,8 +423,8 @@ nav {
     }
 
     #boss {
-        left: 0rem;
-        width: 35rem;
+        left: 0em;
+        width: 35em;
     }
 
     .sprite-container {
@@ -460,6 +475,14 @@ nav {
         bottom: 0;
         left: 4em;
     }
+
+    @keyframes dmgAnimation {
+        0% { bottom: 0em; left: 0em; }
+        25% { bottom: 1em; left: 0em; }
+        50% { bottom: 1em; left: 1em; }
+        75% { bottom: 1em; left: -1em; }
+        100% { bottom: 0em; left: 0em; }
+    }
 }
 
 @media (max-width: 570px) {
@@ -469,8 +492,8 @@ nav {
     }
 
     #boss {
-        left: -8rem;
-        width: 40rem;
+        left: -8em;
+        width: 40em;
     }
 
     .sprite-container {
@@ -480,11 +503,11 @@ nav {
 
     .bossTextContainer {
         width: 50%;
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .choicesContainer {
-        left: 3%;
+        left: 0%;
     }
 
     .choices {
@@ -519,5 +542,13 @@ nav {
     .bossSkill {
         bottom: 2.5em;
         left: 1.5em;
+    }
+
+    @keyframes dmgAnimation {
+        0% { bottom: 0; left: -8em; }
+        25% { bottom: 1.5%; left: -8em; }
+        50% { bottom: 1.5%; left: -9em; }
+        75% { bottom: 1.5%; left: -7em; }
+        100% { bottom: 0; left: -8em; }
     }
 }

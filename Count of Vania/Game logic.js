@@ -31,6 +31,8 @@ function eraseRegisterLogin() {
     }
 }
 
+
+// -------------------------------------------------------------------------------------------------------
 // turning on/off music w/ button change
 const img = document.querySelector("#musicButton");
 
@@ -53,9 +55,10 @@ function IntroToggleAudio() {
 }
 
 let isBossMusicPlaying = false;
+
 function bossFightToggleAudio() {
     const bossMusic = document.querySelector("#bossMusic");
-    bossMusic.volume = 0.3;
+    bossMusic.volume = 0.1;
     
     if (isBossMusicPlaying) {
         img.src = "icons/muteButton.png";
@@ -143,7 +146,7 @@ function option2() {
 const centerGameContainer = document.querySelector(".center-game");
 const dungeonCutscene = document.querySelector(".dungeonCutscene");
 
-const bossFightlForm = document.querySelector(".bossFightForm");
+const bossFightForm = document.querySelector(".bossFightForm");
 const bossNormalForm = document.querySelector(".bossNormalForm");
 
 function dialogueErase() {
@@ -159,7 +162,7 @@ function dialogueErase() {
 
         setTimeout(() => {
             bossNormalForm.style.display = "none";
-            bossFightlForm.style.display = "block";
+            bossFightForm.style.display = "block";
             bossFightToggleAudio();
             audio.pause();
 
@@ -218,6 +221,8 @@ let hpOfMc = 100;
 const bossContainer = document.querySelector(".boss-container");
 const endingVideoContainer = document.querySelector(".endingContainer");
 const endingVideo = document.querySelector("#ending");
+
+const mcCriticalHit = document.querySelector("#mcCriticalHit");
 const youLose = document.querySelector(".displayOfYouLost");
 
 const bossHP = document.querySelector(".hpOfBoss");
@@ -226,6 +231,7 @@ const mcHP = document.querySelector(".hpOfMC");
 function correctChoice() {
     const criticalHit = Math.floor(Math.random() * 60);
     const bossPain = document.querySelector("#bossPain");
+    const bossRoar = document.querySelector("#bossRoar");
 
     bossHP.textContent = `${hpOfBoss -= criticalHit}❦`;
     bossPain.play();
@@ -234,6 +240,8 @@ function correctChoice() {
         endingVideoContainer.style.display = "block";
         bossContainer.style.display = "none";
 
+        bossPain.pause();
+        bossRoar.play();
         endingVideo.play();
         bossFightToggleAudio();
 
@@ -253,6 +261,10 @@ function wrongChoice() {
     if(hpOfMc <= 0) {
         bossContainer.style.display = "none";
         youLose.style.display = "block";
+
+        mcCriticalHit.play();
+        mcPain.pause();
+
         mcHP.textContent = "0❦";
     }
 
@@ -297,10 +309,12 @@ function mcSkillActivated() {
     const mcSkill = document.querySelector(".mcSkill");
 
     mcSkill.style.display = "block";
+    bossFightForm.style.animation = `dmgAnimation ease ${0.5}s`;
     slashSound.play();
 
     setTimeout(() => {
         mcSkill.style.display = "none";
+        bossFightForm.style.animation = "none";
     }, 1000);
 }
 
@@ -327,8 +341,8 @@ function specialCorrectChoice() {
     healingSkillActivated();
     initialization();
 }
+
 function specialWrongChoice() {
-    const mcCriticalHit = document.querySelector("#mcCriticalHit");
     const mcHP = document.querySelector(".hpOfMC");
     const criticalDMG = Math.floor(Math.random() * 100);
 
@@ -372,7 +386,7 @@ function skip() {
             
             setTimeout(() => {
                 bossNormalForm.style.display = "none";
-                bossFightlForm.style.display = "block";
+                bossFightForm.style.display = "block";
         
                 initialization();
         
