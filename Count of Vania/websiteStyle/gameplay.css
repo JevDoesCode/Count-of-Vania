@@ -1,0 +1,769 @@
+@font-face {
+    font-family: pixelFont;
+    src: url(ttf/yoster.ttf);
+}
+
+* {
+    font-family: pixelFont, Courier, monospace;
+}
+
+
+/* OPENING OF THE GAME */
+body {
+    background: -webkit-linear-gradient(right, #0d0729, #111111);   
+    padding: 0;
+    margin: 0;
+}
+
+/* x icon */
+.x_Icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 10%;
+}
+
+/* register_login container */
+.form-container {
+    display: none;
+    border-radius: 10px;
+    padding: 0 2rem 0 2rem;
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    color: white;
+    width: 20%;
+    border: 1px solid white;
+}
+
+.form-container h1 {
+    font-size: 2rem;
+}
+
+/* container input */
+.form-container input {
+    margin-top: 10px;
+    padding: 5px;
+    width: 80%;
+    border-radius: 10px;
+}
+
+/* login/register button */
+#loginbtn_registerbtn {
+    color: white;
+    background: none;
+    margin: 2rem;
+    width: 50%;
+}
+
+
+/* container of the start game */
+.center-startGame {
+    border: 5px solid rgb(0, 0, 0);
+    position: relative;
+    color: white;
+    text-align: center;
+    width: 60rem;
+    height: 25rem;
+    margin: 3em auto;
+    background-image: url("images/start\ game\ bg.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+
+/* text of the the game */
+.title {
+    margin-top: 0;
+    font-size: 4em;
+    color: #fff;
+    text-align: center;
+    text-shadow:
+    3px 3px 0 #000000,
+    -3px 3px 0 #ff0000,
+    -3px -3px 0 #000000,
+    3px -3px 0 #000000;
+}
+
+.start-container {
+    display: grid;
+    place-items: center;
+}
+
+.start {
+    cursor: pointer;
+    color: #fff;
+    text-shadow:
+    3px 3px 0 #000,
+    -3px 3px 0 #000,
+    -3px -3px 0 #000,
+    3px -3px 0 #000;
+    font-size: 3em;
+}
+
+/* THE BUTTON TO SKIP SCENE AND STORYLINE */
+#skip {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+}
+
+
+/* navigation bar w/ logo & title */
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container h4 {
+    color: white;
+}
+
+
+/* nav options */
+.nav-options {
+    display: flex;
+}
+
+.nav-options  h4 {
+    cursor: pointer;
+    color: white;
+    margin: 0 1rem;
+}
+
+
+/* container of the Game */
+.center-game {
+    display: none;
+    border: 5px solid rgb(0, 0, 0);
+    position: relative;
+    color: white;
+    width: 60rem;
+    height: 25rem;
+    margin: 3em auto;
+    background-color: black;
+}
+
+
+/* music icon */
+#musicButton {
+    position: absolute;
+    inset: 10px 5px;
+}
+
+/* VIDEO INTRODUCTION OF THE DEVS */
+#introVideo {
+    width: 100%;
+    height: 100%;
+}
+
+/* trigger event as feature sprite */
+.featureSprite {
+    position: absolute;
+    cursor: pointer;
+    bottom: 0;
+    width: 10%;
+}
+
+/* storyline dialogue */
+.dialogue-container {
+    display: none;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    animation: fadeInAnimation ease 3s;
+}
+
+.nextPart {
+    display: none;
+    animation: fadeInAnimation ease 3s;
+}
+
+.options {
+    cursor: pointer;
+}
+
+#text-container2 {
+    display: none;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+/* Dungeon Prison cell  of the game */
+.dungeonCutscene {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+/* ENDING SCENE */
+.endingContainer {
+    display: none;
+    
+    background-color: rgb(0, 0, 0);
+    border: 5px solid rgb(0, 0, 0);
+    width: 60rem;
+    height: 25rem;
+    margin: 3em auto;
+}
+
+#ending {
+    width:  100%;
+    height: 100%;
+}
+
+/* BOSS SECTION */
+.boss-container {
+    display: none;
+
+    position: relative;
+    padding: 1em, 1em, 0, 1em;
+    border: 5px solid rgb(0, 0, 0);
+    width: 60rem;
+    height: 25rem;
+    margin: 3em auto;
+    color: white;
+    background-image: url("images/boss\ fight.png");
+    background-size: 100%;
+    animation: fadeInAnimation ease 6s;
+}
+
+/* the img of the boss */
+#boss {
+    position: absolute;
+    left: 25%;
+    bottom: 0%;
+    width: 55%;
+}
+
+.bossFightForm {
+    display: none;
+}
+
+/* TEXT BOX FOR MC AND BOSS */
+.text-box {
+    display: none;
+}
+
+/* MC CONTAINER */
+.sprite-container {
+    margin: 1em 1em 1em 4em;
+    width: 20%;
+    height: 20%;
+    border-radius: 15px;
+    box-shadow: 0px 3px 8px rgb(0, 0, 0.25);
+}
+
+/* MC IMG */
+.spriteCharacter {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+/* YOU LOST CONTAINER */
+.displayOfYouLost {
+    display: none;
+
+    color: rgb(255, 0, 0);
+    background-color: rgb(0, 0, 0);
+    border: 5px solid rgb(0, 0, 0);
+    width: 60rem;
+    height: 25rem;
+    margin: 3em auto;
+}
+
+.youLoseContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60rem;
+    height: 25rem;
+
+    animation: fadeInAnimation ease-in-out 3s;
+}
+
+.youLoseHolder {
+    font-size: 2em;
+    text-align: center;
+}
+
+.again {
+    cursor: pointer;
+}
+
+
+/* boss text box container */
+.bossTextContainer {
+    display: flex;  
+    position: absolute;
+    top: 0;
+    left: 35%;
+    margin: 15px;
+    background-color: rgb(73, 47, 99);
+    width: 20rem;
+    border-radius: 10px;
+    box-shadow: 0px 3px 8px rgb(0, 0, 0.25);
+    animation: fadeGameLikeAnimation ease 1s;
+}
+
+.bossTextContainer img {
+    width: 5rem;
+    background-color: black;
+}
+
+/* Not display Boss text box */
+.bossTextContainer p{
+    padding: 0 1rem 1rem 1rem;
+}
+
+/* Choices for the questionnaires */
+.choices {
+    display: none;
+}
+
+.choicesContainer {
+    overflow: hidden;
+    text-align: center;
+    width: 25rem;
+    display: flex;
+    position: absolute;
+    bottom: 2em;
+    left: 35%;
+    animation: fadeGameLikeAnimation ease 1s;
+}
+
+.choicesContainer .choice {
+    cursor: pointer;
+    background-color: rgb(73, 47, 99);
+    color: white;
+    margin: 0 2em;
+    padding: 0.5rem;
+    box-shadow: 0px 3px 8px rgb(0, 0, 0.25);
+    font-size: 15px;
+}
+
+/* HOVER ANIMATION EFFX */
+.choice:hover {
+    transform: translateY(-15%);
+    transition: transform 0.5s;
+}
+
+/* display text box */
+.displayBlock {
+    display: block;
+}
+
+/* HP OF THE BOSS */
+.hpOfBoss {
+    text-align: center;
+    padding: 5px;
+    background-color: black;
+    border-radius: 10px;
+    color: rgba(230, 13, 13, 0.945);
+    position: absolute;
+    right: 13em;
+    top: 5em;
+    box-shadow: 0px 3px 8px rgb(0, 0, 0.25);
+}
+
+/* HP OF THE MC */
+.hpOfMC {
+    position: absolute;
+    left: 7.5em;
+}
+
+/* NEXT DIALOGUE BTN */
+.nextBtn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: none;
+    color: white;
+    font-size: 10px;;
+}
+
+/* SKILL EFFX THAT HEALS */
+.healSkill {
+    display: none;
+    position: absolute;
+    left: 7em;
+    top: 1em;
+    width: 10%;
+}
+
+/* SKILL EFFX BY MC */
+.mcSkill {
+    display: none;
+    position: absolute;
+    width: 15%;
+    left: 25rem;
+    bottom: 5rem;
+}
+
+/* SKILL EFFX BY BOSS */
+.bossSkill {
+    display: none;
+    position: absolute;
+    left: 15em;
+    bottom: -2em;
+    width: 50%;
+}
+
+/* the option to make text have a fade in effx */
+#animatedText {
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+/* FADE-IN ANIMATION */
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* POP GAME-LIKE ANIMATION */
+@keyframes fadeGameLikeAnimation {
+    0% {
+        transform: translateY(25%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* DMG ANIMATION */
+@keyframes dmgAnimation {
+    0% { bottom: 0; left: 25%; }
+    25% { bottom: 1.5%; left: 25%; }
+    50% { bottom: 1.5%; left: 24%; }
+    75% { bottom: 1.5%; left: 26%; }
+    100% { bottom: 0; left: 25%; }
+}
+
+
+/* RESPONSIVENESS */
+@media (max-width: 930px) {
+    .center-startGame, .center-game, .boss-container, .displayOfYouLost, .youLoseContainer, .endingContainer {
+        background-position: center;
+        width: 50rem;
+        height: 25rem;
+    }
+
+    .form-container h1 {
+        font-size: 1.8rem;
+    }
+
+    #musicButton {
+        width: 50px;
+        inset: 15px 5px;
+    }
+
+    #boss {
+        width: 30em;
+        left: 10em;
+    }
+
+    .hpOfBoss {
+        font-size: 18px;
+        top: 10em;
+        right: 15em;
+    }
+    
+    .hpOfMC {
+        left: 6.5em;
+    }
+
+    .mcSkill {
+        left: 20rem;
+    }
+
+    .bossSkill {
+        bottom: -1em;
+        left: 11.5em;
+    }
+
+    .choicesContainer {
+        left: 30%;
+    }
+
+    @keyframes dmgAnimation {
+        0% { bottom: 0em; left: 10em; }
+        25% { bottom: 1em; left: 10em; }
+        50% { bottom: 1em; left: 11em; }
+        75% { bottom: 1em; left: 9rem; }
+        100% { bottom: 0em; left: 10em; }
+    }
+}
+
+@media (max-width: 800px) {
+    .center-startGame, .center-game, .boss-container, .displayOfYouLost, .youLoseContainer, .endingContainer {
+        width: 35rem;
+        height: 30rem;
+        margin: 5em auto;
+        background-size: cover;
+    }
+
+    .form-container h1 {
+        font-size: 1.6rem;
+    }
+
+    #boss {
+        left: 0em;
+        width: 35em;
+    }
+
+    .sprite-container {
+        width: 15%;
+        height: 15%;
+    }
+
+    .bossTextContainer {
+        width: 50%;
+        font-size: 12px;
+    }
+
+    .choicesContainer {
+        left: 15%;
+    }
+
+    .choices {
+        font-size: 16px;
+    }
+    
+
+    .hpOfBoss {
+        top: 7em;
+        left: 17em;
+        width: 10%;
+        font-size: 15px;
+    }
+
+    .hpOfMC {
+        left: 5.5em;
+        top: 0;
+        font-size: 16px;
+    }
+
+    .healSkill {
+        left: 4em;
+        width: 15%;
+    }
+
+    .mcSkill {
+        width: 20%;
+        left: 15rem;
+        bottom: 10rem;
+    }
+
+    .bossSkill {
+        width: 70%;
+        bottom: 0;
+        left: 4em;
+    }
+
+    @keyframes dmgAnimation {
+        0% { bottom: 0em; left: 0em; }
+        25% { bottom: 1em; left: 0em; }
+        50% { bottom: 1em; left: 1em; }
+        75% { bottom: 1em; left: -1em; }
+        100% { bottom: 0em; left: 0em; }
+    }
+}
+
+@media (max-width: 570px) {
+    .center-startGame, .center-game, .boss-container, .displayOfYouLost, .youLoseContainer, .endingContainer {
+        width: 25rem;
+        height: 35rem;
+    }
+
+    .form-container {
+        padding: 0 3rem 0 3rem;
+    }
+
+    .form-container input{
+        width: 100%;
+    }
+
+    .form-container h1 {
+        margin-left: 8px;
+        font-size: 1.2rem;
+    }
+
+    #loginbtn_registerbtn {
+        width: 100%;
+        margin-left: 5px;
+    }
+
+    #boss {
+        left: -8em;
+        width: 40em;
+    }
+
+    .sprite-container {
+        width: 15%;
+        height: 15%;
+    }
+
+    .bossTextContainer {
+        width: 50%;
+        font-size: 11px;
+    }
+
+    .choicesContainer {
+        left: 0%;
+    }
+
+    .choices {
+        font-size: 13px;
+        width: 100%;
+    }
+    
+
+    .hpOfBoss {
+        top: 8em;
+        left: 11em;
+        font-size: 16px;
+    }
+
+    .hpOfMC {
+        left: 4.5em;
+        top: 0;
+        font-size: 16px;
+    }
+
+    .healSkill {
+        top: 2em;
+        width: 15%;
+    }
+
+    .mcSkill {
+        width: 30%;
+        left: 8rem;
+        bottom: 10rem;
+    }
+
+    .bossSkill {
+        bottom: 2.5em;
+        left: 1.5em;
+    }
+
+    @keyframes dmgAnimation {
+        0% { bottom: 0; left: -8em; }
+        25% { bottom: 1.5%; left: -8em; }
+        50% { bottom: 1.5%; left: -9em; }
+        75% { bottom: 1.5%; left: -7em; }
+        100% { bottom: 0; left: -8em; }
+    }
+}
+
+@media (max-width: 375px) {
+    .center-startGame, .center-game, .boss-container, .displayOfYouLost, .youLoseContainer, .endingContainer {
+        width: 20rem;
+        height: 30rem;
+        overflow: scroll;
+    }
+
+    .center-startGame h1 {
+        font-size: 2.5rem;
+    }
+
+    .form-container {
+        padding: 0 3rem 0 2rem;
+    }
+
+    .form-container input{
+        width: 100%;
+    }
+
+    .form-container h1 {
+        margin-left: 8px;
+        font-size: 0.8rem;
+    }
+
+    #loginbtn_registerbtn {
+        width: 100%;
+        margin-left: 5px;
+    }
+
+    #musicButton {
+        width: 2rem;
+    }
+
+    .dialogue-container h1, h4 {
+        font-size: 15px;
+    }
+
+    #boss {
+        left: -6em;
+        width: 30em;
+    }
+
+    .sprite-container {
+        width: 15%;
+        height: 15%;
+    }
+
+    .bossTextContainer {
+        font-size: 10px;
+    }
+
+    .bossTextContainer img {
+        width: 3rem;
+    }
+
+    .bossTextContainer .nextBtn{
+        width: 5%;
+        font-size: 5px;
+    }
+
+    .choicesContainer {
+        left: -2em;
+    }
+
+    .hpOfBoss {
+        top: 10em;
+        left: 10em;
+        font-size: 13px;
+    }
+
+    .hpOfMC {
+        font-size: 15px;
+    }
+
+    .mcSkill {
+        left: 6rem;
+        bottom: 7rem;
+    }
+
+    .bossSkill {
+        bottom: 2em;
+        left: 1em;
+    }
+
+    @keyframes dmgAnimation {
+        0% { bottom: 0; left: -6em; }
+        25% { bottom: 1.5%; left: -5em; }
+        50% { bottom: 1.5%; left: -7em; }
+        75% { bottom: 1.5%; left: -7em; }
+        100% { bottom: 0; left: -6em; }
+    }
+}
