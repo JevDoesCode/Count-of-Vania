@@ -247,7 +247,7 @@ function correctChoice() {
         endingVideo.play();
         bossFightToggleAudio();
 
-        bossHP.textContent = "0❦";
+        bossHP.textContent = "0 ❦";
     }
 
     mcSkillActivated();
@@ -257,7 +257,7 @@ function correctChoice() {
 function wrongChoice() {
     const mcPain = document.querySelector("#mcPain");
     
-    mcHP.textContent = `${hpOfMc -= 25}❦`;
+    mcHP.textContent = `${hpOfMc -= 25} ❦`;
     mcPain.play();
 
     if(hpOfMc <= 0) {
